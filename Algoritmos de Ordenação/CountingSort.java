@@ -13,11 +13,11 @@ class CountingSort{
 		int k = (max-min)+1;//range dos termos
 		int[] arrayCount = new int[k];// inicia com zeros por padrão!
 		// conta quantos elementos tem de cada valor possivel (dentro do range)
-		for(int i =0; i < array.length; i++)
+		for(int i = 0; i < array.length; i++)
 			arrayCount[array[i]-min]++;// - min faz economia de memoria do countArray
 			// -min pra posição 0 do arrayCount ser o primeiro valor possivel do range
 		// avalia a posição de cada elemento (somando os anteriores)
-		for(int i =1; i < arrayCount.length; i++)
+		for(int i =1; i < k; i++)
 			arrayCount[i] += arrayCount[i-1];
 		// agora que temos o arrayCount pronto, colocamos os elementos em suas posições
 		// conforme quantos o precedem no array definitivamente ordenado
